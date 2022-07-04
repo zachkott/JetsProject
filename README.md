@@ -1,8 +1,10 @@
 #JetsProject
 
 ## Description
-
+The objective of this project was to create a program that reads a file filled with information regarding different types of jets. The text file includes the jet type, model, speed, price, and range. This program reads the file and stores all of the jets and their information in an array list that can be accessed by the user and manipulated in a variety of ways. The main menu has 11 options to choose from,if the user enters a 1 they will be shown a list of all the jets that are currently in the file. If the user enters a 2, they will call a method that flies all of the jets in the fleet. If the user enters a 3 they will have the option to choose a single jet from the fleet and fly that specific jet. If the user enters a 4 the program will look through the fleet and display   the fastest jet. If the user enters a 5 the program will look through the fleet and display the jet with the longest range. If the user enters 6,7,8 they will see methods specific to fighter jets, cargo jets, and ufo's. If the user enters a 9 they will have the option to add a custom jet to the fleet, and will be shown an updated list upon entering all of the required information. If the user enters a 10 they will be allowed to remove any jet from the fleet. If the user enters 11 they will receive a goodbye message and the application will terminate.
+ 
 ## Technologies Used
-Java, file I/O, Interfaces
+Java, File I/O, Interfaces, Object Oriented  Programming, Abstract classes, Array lists, Do-while loops, For loops, For each loops, Switch statements, If-else statements, Atom, Eclipse, Github, Terminal
 
-## Lessons Learned# JetsProject
+## Lessons Learned
+I learned how to use object oriented programming, polymorphism, inheritance, and interfaces to create program that reads from a text file and allows the user to view the list as it is as well as manipulate the list in various ways. I found that using a UML diagram is extremely helpful when it comes to staying on track and not forgetting any of the crucial elements. The most difficult aspect of this project was removing a jet from the fleet. Removing the users selection wasn't difficult but I could not figure out how to convert the user input to the corresponding index and have the actual name of the jet show.

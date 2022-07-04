@@ -1,6 +1,8 @@
 package com.skilldistillery.jets.entities;
 
 public interface mothership {
+
+	// interface to be implemented by the UFO subclass only
 	public default void beamMeUp() {
 		System.out.println("UFO get ready to return to the mothership...");
 		System.out.println("Checking dark matter levels...");

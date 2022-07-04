@@ -12,10 +12,11 @@ public class AirField {
 	Scanner sc = new Scanner(System.in);
 	private List<Jet> fleet = new ArrayList<Jet>();
 
-
 	public AirField() {
 	}
 
+	// This is the method that reads the csv file, each line is an array that is
+	// further broken down by using .split
 	public List<Jet> getJetsFromFile() {
 		try (BufferedReader bufIn = new BufferedReader(new FileReader("jets.csv"))) {
 
@@ -29,6 +30,7 @@ public class AirField {
 				long price = Long.parseLong(splitLine[3]);
 				int range = Integer.parseInt(splitLine[4]);
 
+				// nested if-else statements to determine the correct type of jet.
 				if (type.equalsIgnoreCase("Fighter")) {
 					FighterJet fightJet = new FighterJet(type, model, speed, price, range);
 					fleet.add(fightJet);
@@ -53,6 +55,8 @@ public class AirField {
 		return fleet;
 	}
 
+	// This method looks within the array list and iterates through it until it
+	// finds the jet with the fastest speed
 	public void fastestJet() {
 		double topSpeed = 0.0;
 		String thisJet = "";
@@ -69,6 +73,8 @@ public class AirField {
 		System.out.println();
 	}
 
+	// This method is similar to the fastest jet method, however instead of finding
+	// the fastest jet it looks for the jet with the longest range
 	public void longestRange() {
 		int longRange = 0;
 		String thisJet = "";
@@ -83,6 +89,7 @@ public class AirField {
 		System.out.println();
 	}
 
+	// This method calls the fly method for each of the jets in the fleet
 	public void fly() {
 		for (Jet jet : fleet) {
 			System.out.println(jet);
@@ -91,6 +98,24 @@ public class AirField {
 
 	}
 
+	// This  is the stretch goal that allows the user to fly a single jet
+	public void flyThis() {
+
+		int choice = 0;
+		System.out.println("Please choose a jet you would like to fly");
+		System.out.println();
+		for (int i = 0; i < fleet.size(); i++) {
+			System.out.println(i + 1 + ": " + this.fleet.get(i));
+			System.out.println();
+		}
+
+		choice = sc.nextInt();
+		fleet.get(choice - 1).fly();
+
+	}
+
+	// This method allows the user to add a custom jet to the fleet so long as it is
+	// one of the types mentioned in the menu
 	public void addJets() {
 		String type = "";
 		String model = "";
@@ -98,7 +123,6 @@ public class AirField {
 		long price = 0;
 		int range = 0;
 
-		
 		System.out.println("///////////////////////////////////////////////////////");
 		System.out.println("/                                                     /");
 		System.out.println("/                  - Add Jets -                       /");
@@ -117,9 +141,6 @@ public class AirField {
 		System.out.println();
 		type = sc.next();
 
-
-
-	
 		if (type.equalsIgnoreCase("Fighter") || type.equalsIgnoreCase("Cargo") || type.equalsIgnoreCase("Passenger")
 				|| type.equalsIgnoreCase("UFO")) {
 
@@ -160,6 +181,11 @@ public class AirField {
 
 	}
 
+	// This method asks the user to choose the number that corresponds to the jet
+	// they would like to remove and then tells them which jet was removed and
+	// displays an updated list
+	// I tried various things to show the name of the jet being removed but had no
+	// luck
 	public void removeJet() {
 
 		System.out.println("Please choose the number that corresponds to the jet you would like to remove");

@@ -4,14 +4,18 @@ import java.util.Objects;
 
 public abstract class Jet {
 
+	// well encapsulated data that all Jet objects share
 	private String jetType;
 	private String model;
 	private double speed;
 	private long price;
 	private int range;
-	
-	public Jet() {}
 
+	// No arg ctor
+	public Jet() {
+	}
+
+	// Jet ctor that will be passed to all classes that extend Jet
 	public Jet(String type, String model, double speed, long price, int range) {
 		super();
 		this.jetType = type;
@@ -22,6 +26,7 @@ public abstract class Jet {
 
 	}
 
+	// Getters and Setters for all variables
 	public String getJetType() {
 		return jetType;
 	}
@@ -61,22 +66,26 @@ public abstract class Jet {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-	
+
+	// Method that will be called whenever the user wants to call all jets or single
+	// jet
 	public void fly() {
-		double airTime = range/speed;
+		double airTime = range / speed;
 		System.out.println(model + " is cleared for takeoff...");
 		System.out.println(model + " had a succesful takeoff... ");
 		System.out.println(model + " has reached its cruising altitude...");
-		System.out.println(model + " will have to land in " + String.format("%.2f",airTime) + " hours.");
+		System.out.println(model + " will have to land in " + String.format("%.2f", airTime) + " hours.");
 		System.out.println();
 	}
 
+	// toString that prints out all of the Jet objects information
 	@Override
 	public String toString() {
-		return "[Type: " + jetType + ", Model: " + model + ", Speed: " + speed + " mph" + ", Price: $" + price + ", Range: "
-				+ range + " mi" + "]";
+		return "[Type: " + jetType + ", Model: " + model + ", Speed: " + speed + " mph" + ", Price: $" + price
+				+ ", Range: " + range + " mi" + "]";
 	}
 
+	// Implementation for hashCode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(jetType, model, price, range, speed);
@@ -95,7 +104,4 @@ public abstract class Jet {
 				&& range == other.range && Double.doubleToLongBits(speed) == Double.doubleToLongBits(other.speed);
 	}
 
-	
-
-	
 }

@@ -20,6 +20,9 @@ public class JetsApplication {
 		menu();
 		boolean continueLoop = true;
 
+		
+		// This do while loop will continue until the user enters 11.
+		// The menu will be displayed after each user input until the loop is broken
 		do {
 
 			System.out.println("Please choose an option from the menu.");
@@ -37,34 +40,38 @@ public class JetsApplication {
 				break;
 
 			case 3:
-				fastestJet();
+				flyThisJet();
 				break;
 
 			case 4:
-				longestRange();
+				fastestJet();
 				break;
 
 			case 5:
-				loadCargo();
+				longestRange();
 				break;
 
 			case 6:
-				dogfight();
+				loadCargo();
 				break;
 
 			case 7:
-				ufoReturn();
+				dogfight();
 				break;
 
 			case 8:
-				addJet();
+				ufoReturn();
 				break;
 
 			case 9:
-				removeJet();
+				addJet();
 				break;
 
 			case 10:
+				removeJet();
+				break;
+
+			case 11:
 				quitApp();
 				break;
 
@@ -76,6 +83,7 @@ public class JetsApplication {
 		} while (continueLoop);
 	}
 
+	// This is the method that will be called when the user opens the app
 	public void menu() {
 		System.out.println("///////////////////////////////////////////////////////");
 		System.out.println("/                                                     /");
@@ -83,20 +91,22 @@ public class JetsApplication {
 		System.out.println("/                                                     /");
 		System.out.println("/   1: List fleet.                                    /");
 		System.out.println("/   2: Fly all jets.                                  /");
-		System.out.println("/   3: View fastest jet.                              /");
-		System.out.println("/   4: View jet with longest range.                   /");
-		System.out.println("/   5: Load all Cargo Jets.                           /");
-		System.out.println("/   6: Dogfight!                                      /");
-		System.out.println("/   7: Phone home.                                    /");
-		System.out.println("/   8: Add a jet to fleet.                            /");
-		System.out.println("/   9: Remove a jet from fleet.                       /");
-		System.out.println("/   10: Quit the program                              /");
+		System.out.println("/   3: Fly single jet.                                /");
+		System.out.println("/   4: View fastest jet.                              /");
+		System.out.println("/   5: View jet with longest range.                   /");
+		System.out.println("/   6: Load all Cargo Jets.                           /");
+		System.out.println("/   7: Dogfight!                                      /");
+		System.out.println("/   8: Phone home.                                    /");
+		System.out.println("/   9: Add a jet to the fleet.                        /");
+		System.out.println("/   10: Remove a jet from fleet.                      /");
+		System.out.println("/   11: Quit the program                              /");
 		System.out.println("/                                                     /");
 		System.out.println("///////////////////////////////////////////////////////");
 		System.out.println();
 
 	}
 
+	// User story #1 this method prints the toString with all data on the fleet
 	public void listJets() {
 		System.out.println(af.toString());
 	}
@@ -104,6 +114,10 @@ public class JetsApplication {
 	public void flyJets() {
 		af.fly();
 
+	}
+
+	public void flyThisJet() {
+		af.flyThis();
 	}
 
 	public void fastestJet() {
@@ -126,18 +140,23 @@ public class JetsApplication {
 		af.dogfight();
 	}
 
+	// Added the toString to show an updated list after the user adds a jet to the
+	// fleet
 	public void addJet() {
 		af.addJets();
 		System.out.println(af.toString());
 
 	}
 
+	// Added the toString to show an updated list after the user has removed a jet
+	// from the fleet
 	public void removeJet() {
 		System.out.println(af.toString());
 		af.removeJet();
 		System.out.println(af.toString());
 	}
 
+	// This method will be called when the user enters 11 in the main menu
 	public void quitApp() {
 		System.out.println("Thank you for stopping by the Area 69 air base. We hope you enjoyed your stay!");
 		System.exit(0);
