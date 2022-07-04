@@ -12,8 +12,6 @@ public class AirField {
 	Scanner sc = new Scanner(System.in);
 	private List<Jet> fleet = new ArrayList<Jet>();
 
-	@SuppressWarnings("unused")
-	private Jet jet;
 
 	public AirField() {
 	}
@@ -100,13 +98,28 @@ public class AirField {
 		long price = 0;
 		int range = 0;
 
-		// add menu here explaining what info the user will need in order to enter a new
-		// aircraft
-
-		System.out.println("Please enter the type of aircraft you would like to add.");
-		System.out.println("Fighter, Cargo, Passenger, UFO");
+		
+		System.out.println("///////////////////////////////////////////////////////");
+		System.out.println("/                                                     /");
+		System.out.println("/                  - Add Jets -                       /");
+		System.out.println("/                                                     /");
+		System.out.println("/  If you would like to add a jet to the fleet you    /");
+		System.out.println("/  must know the jets type, model, speed, cost, and   /");
+		System.out.println("/  range.                                             /");
+		System.out.println("/                                                     /");
+		System.out.println("/         Lets begin with the jet's type.             /");
+		System.out.println("/  Please enter the type of aircraft you would like   /");
+		System.out.println("/  to add.                                            /");
+		System.out.println("/                                                     /");
+		System.out.println("/    	  Fighter, Cargo, Passenger, UFO              /");
+		System.out.println("/                                                     /");
+		System.out.println("///////////////////////////////////////////////////////");
+		System.out.println();
 		type = sc.next();
 
+
+
+	
 		if (type.equalsIgnoreCase("Fighter") || type.equalsIgnoreCase("Cargo") || type.equalsIgnoreCase("Passenger")
 				|| type.equalsIgnoreCase("UFO")) {
 
@@ -124,22 +137,22 @@ public class AirField {
 		}
 
 		if (type.equalsIgnoreCase("Fighter")) {
-			this.fleet.add(new FighterJet(type, model, speed, price, range));
+			this.fleet.add(new FighterJet(type.toUpperCase(), model, speed, price, range));
 			System.out.println("Excellent! Your Fighter jet has been added to the fleet.");
 			System.out.println();
 
 		} else if (type.equalsIgnoreCase("Cargo")) {
-			this.fleet.add(new CargoJet(type, model, speed, price, range));
+			this.fleet.add(new CargoJet(type.toUpperCase(), model, speed, price, range));
 			System.out.println("Excellent! Your Cargo jet has been added  to the fleet.");
 			System.out.println();
 
 		} else if (type.equalsIgnoreCase("Passenger")) {
-			this.fleet.add(new Passenger(type, model, speed, price, range));
+			this.fleet.add(new Passenger(type.toUpperCase(), model, speed, price, range));
 			System.out.println("Excellent! Your Passenger jet has been added to the fleet.");
 			System.out.println();
 
 		} else if (type.equalsIgnoreCase("UFO")) {
-			this.fleet.add(new UFO(type, model, speed, price, range));
+			this.fleet.add(new UFO(type.toUpperCase(), model, speed, price, range));
 			System.out.println("Excellent! Your UFO has been added to the fleet.");
 			System.out.println();
 
