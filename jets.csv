@@ -1,11 +1,9 @@
-#type,model,speed,price,range
-Passenger,Cessna 172,20
-Passenger,Boeing 757,
-Fighter,F-22 Raptor,
-Fighter,Grumman F-14 Tomcat,
-Fighter,F-15 Eagle,
-Cargo,Boeing C-17,
-Cargo,Hughes H-4 Hercules, 
-Cargo,Aero Spacelines Super Guppy,
+Passenger,Cessna 172,142,400000,736
+Passenger,Boeing 757,528,100000000,4488
+Fighter,F-22 Raptor,1500,125000000,1864
+Fighter,Grumman F-14 Tomcat,1544,38000000,1841
+Fighter,F-15 Eagle,1875,110000000,2992
+Cargo,Boeing C-17,601,340000000,2400
+Cargo,Hughes H-4 Hercules,250,2500000,3000
+Cargo,Aero Spacelines Super Guppy,300,2280000,505
 UFO,E.T. Cruiser,10000,100000000,90000000
-
